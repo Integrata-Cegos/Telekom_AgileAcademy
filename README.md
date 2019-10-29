@@ -1,11 +1,30 @@
-# Telekom_AgileAcademy
-Telekom_AgileAcademy
+# Musterlösung nach den Blöcken 2 und 3 der Telekom Akademie
 
-## Inhalte 
-Die Schulung startet mit einer Einführung in die Tool-Landschaft der modernen Software-Entwicklung. Im Wesentlichen werden zentrale Bestandteile des DevOps-Konzepts (Versionsveraltung, Automatisierter Build) vorgestellt. Als Werkzeuge hierzu dient Git mit dem GitLab-Server der Telekom, Maven als Build-Werkzeugt und Nexus als Artefakt-Repository. Ein automatisierter CI/CD-Prozess am Beispiel GitLab CI/CD kann angesprochen werden. Eine moderne Entwicklungsumgebung wird am Beispiel Eclipse vorgestellt.
+## Schwerpunkte
 
-## Hinweise 
+* Simples Programmieren
+  * RandomIsbnGenerator mit Properties, Constructor, java.util.Random
+  * Datenstruktur Book, hier insbesondere auch auf die generierten Funktionen (toString etc) 
+* Vererbung	
+  * Book
+  * SchoolBook
+  * SpecialistBook
+* Collections
+  * MapStoreService mit einer verschachtelten Hashmap
+* Streaming-API und Lambda-Funktionen
+  * MapBooksService mit den diversen find- und list-Methoden
+* Funktionale Programmierung
+  * Die Generators-Map im MapBooksService
 
-In diesem Block wird noch nichts programmiert (auch wenn es dem ein oder anderen schwerfallen sollte). Schwerpunkt des Unterrichts ist Git, mit dem auch praktisch gearbeitet werden wird. Der Build-Prozess und die Einführung in die Begriffe des DevOps-Ansatzes sind hier noch theoretisch, leiten die Teilnehmer jedoch von vornherein auf sichere und etablierte Bahnen.
+## Hinweise
 
-	
+* Es wird keine Main-Klasse benutzt sondern ausschließlich ein JUnit-Test
+* Die Musterlösung enthält kein javadoc. Bringt bei dem einfachen Beispiel auch nicht wirklich was
+* Schnittstellen sind grob behandelt durch Implementierung von Comparable im Book
+* Ein enum-Beispiel ist mit Ordering gegeben
+* Das Beispiel zur funktionalen Programmierung in Generators-Map muss von den Teilnehmern nicht aktiv realisiert werden
+* Mögliche Erweiterungen:
+  * Natürlich beliebige zusätzliche Subklassen von Book.
+  * Weitere Such-Methoden
+  * Zusätzliche Sortier-Methoden und damit Einführung des Comparator-Interfaces
+  * Einlesen von Properties-Dateien zum Befüllen der Store-Kategorien   
