@@ -86,7 +86,7 @@ public class Order {
 	private OrderStatus status;
 
 	
-	enum OrderStatus{
+	public static enum OrderStatus{
 		OK, PENDING, UNAVAILABLE;
 	}
 }
