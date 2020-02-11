@@ -1,6 +1,5 @@
 package org.javacream.util.audit;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.javacream.util.audit.api.AuditService;
@@ -19,12 +18,11 @@ public class AuditServiceTest {
 	@Autowired AuditService auditService;
 	@Test
 	public void testAuditService() {
-		String[] array = {"Hello", "World"};
-		List<String> expected = Arrays.asList(array);
 		auditService.audit("Hello");
 		auditService.audit("World");
 		List<String> result = auditService.logAll();
-		Assert.assertEquals(expected, result);
+		Assert.assertTrue(result.contains("Hello"));
+		Assert.assertTrue(result.contains("World"));
 	}
 	
 }

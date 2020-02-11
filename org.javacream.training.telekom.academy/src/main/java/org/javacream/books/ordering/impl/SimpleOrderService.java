@@ -11,6 +11,7 @@ import org.javacream.books.warehouse.api.Book;
 import org.javacream.books.warehouse.api.BookException;
 import org.javacream.books.warehouse.api.BooksService;
 import org.javacream.store.api.StoreService;
+import org.javacream.util.SequenceGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -21,18 +22,9 @@ public class SimpleOrderService implements OrderService {
 	private BooksService booksService;
 	@Autowired
 	private StoreService storeService;
-	private Random random;
-
-	public SimpleOrderService() {
-		System.out.println("***************** CONSTRUCTOR " + this + ", storeService=" + storeService);
-	}
-	@PostConstruct
-	public void init() {
-		System.out.println("***************** POSTCONSTRUCT " + this + ", storeService=" + storeService);
-		random = new Random(this.hashCode() + System.currentTimeMillis());
-	}
-
+	@Autowired private SequenceGenerator sequenceGenerator;
 	@Override
+
 	public Order order(String isbn, int number) {
 		OrderStatus orderStatus;
 		double totalPrice = 0;
@@ -58,7 +50,7 @@ public class SimpleOrderService implements OrderService {
 			orderStatus = OrderStatus.UNAVAILABLE;
 		}
 		
-		return new Order(random.nextLong(), isbn, totalPrice, orderStatus);
+		return new Order(sequenceGenerator.nextKey(), isbn, totalPrice, orderStatus);
 	}
 
 }
