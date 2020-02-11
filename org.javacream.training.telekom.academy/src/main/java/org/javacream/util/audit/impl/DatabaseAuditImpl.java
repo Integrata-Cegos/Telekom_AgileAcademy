@@ -8,18 +8,22 @@ import javax.persistence.Query;
 
 import org.javacream.util.audit.api.AuditService;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Component
-@Transactional
+@Transactional(propagation = Propagation.REQUIRES_NEW)
 public class DatabaseAuditImpl implements AuditService{
-
+	public static boolean shouldRollback;
 	@PersistenceContext private EntityManager entityManager;
 	@Override
 	public void audit(String message) {
 		Query query = entityManager.createNativeQuery("insert into AUDIT values(:message)");
 		query.setParameter("message", message);
 		query.executeUpdate();
+		if (shouldRollback) {
+			throw new RuntimeException("MUST ROLLBACK!");
+		}
 	}
 
 	@Override
