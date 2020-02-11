@@ -3,15 +3,15 @@ package org.javacream.books.isbngenerator.impl;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.transaction.Transactional;
 
 import org.javacream.books.isbngenerator.api.IsbnGenerator;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component
 public class DatabaseIsbnGenerator implements IsbnGenerator{
-
 	@PersistenceContext private EntityManager entityManager;
 	public DatabaseIsbnGenerator(@Value("${isbngenerator.prefix}") String prefix, @Value("${isbngenerator.suffix}")String suffix) {
 		if (prefix == null || suffix ==  null) {
@@ -25,7 +25,7 @@ public class DatabaseIsbnGenerator implements IsbnGenerator{
 	
 
 	@Override
-	@Transactional
+	@Transactional(propagation = Propagation.REQUIRED)
 	public String next() {
 		Integer key = (Integer) entityManager.createNativeQuery("select col_key from keys").getSingleResult();
 		key++;

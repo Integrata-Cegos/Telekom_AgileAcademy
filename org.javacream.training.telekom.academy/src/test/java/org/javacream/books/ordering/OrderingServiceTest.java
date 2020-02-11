@@ -3,6 +3,7 @@ package org.javacream.books.ordering;
 import org.javacream.books.ordering.api.Order;
 import org.javacream.books.ordering.api.Order.OrderStatus;
 import org.javacream.books.ordering.api.OrderService;
+import org.javacream.store.api.StoreService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,7 +22,7 @@ public class OrderingServiceTest {
 	private static final int UNAVAILABLE_IN_STOCK = 20;
 	
 	@Autowired OrderService orderService;
-	
+	@Autowired StoreService storeService;
 	@Test public void testOrderServiceAvailable() {
 		Assert.assertNotNull(orderService);
 	}

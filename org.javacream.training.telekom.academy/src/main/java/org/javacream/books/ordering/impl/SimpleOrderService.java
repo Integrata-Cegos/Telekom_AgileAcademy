@@ -23,8 +23,12 @@ public class SimpleOrderService implements OrderService {
 	private StoreService storeService;
 	private Random random;
 
+	public SimpleOrderService() {
+		System.out.println("***************** CONSTRUCTOR " + this + ", storeService=" + storeService);
+	}
 	@PostConstruct
 	public void init() {
+		System.out.println("***************** POSTCONSTRUCT " + this + ", storeService=" + storeService);
 		random = new Random(this.hashCode() + System.currentTimeMillis());
 	}
 
