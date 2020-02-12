@@ -34,8 +34,8 @@ public class BooksJavaTests {
 		System.out.println(book.getClass().getName());
 		
 		HashMap<String, Object> optionsForSpecialistBook = new HashMap<>();
-		Function<Map<String, Object>, Book> generator2 = generators.get(optionsForSpecialistBook.keySet());
 		optionsForSpecialistBook.put("topic", "Java");
+		Function<Map<String, Object>, Book> generator2 = generators.get(optionsForSpecialistBook.keySet());
 		Book book2 = generator2.apply(optionsForSpecialistBook);
 		System.out.println(book2.getClass().getName());
 		
