@@ -38,6 +38,20 @@ public class BooksJavaTests {
 		Function<Map<String, Object>, Book> generator2 = generators.get(optionsForSpecialistBook.keySet());
 		Book book2 = generator2.apply(optionsForSpecialistBook);
 		System.out.println(book2.getClass().getName());
+
+		HashMap<String, Object> optionsForComic = new HashMap<>();
+		optionsForComic.put("hero", "Captain Picard");
+		Function<Map<String, Object>, Book> generator3 = generators.get(optionsForComic.keySet());
+		Book book3 = generator3.apply(optionsForComic);
+		System.out.println(book3.getClass().getName());
 		
+		
+		HashMap<String, Object> optionsForHistory = new HashMap<>();
+		optionsForHistory.put("century", 20);
+		Function<Map<String, Object>, Book> generator4 = generators.get(optionsForHistory.keySet());
+		Book book4 = generator4.apply(optionsForHistory);
+		System.out.println(book4.getClass().getName());
+		
+
 	}
 }

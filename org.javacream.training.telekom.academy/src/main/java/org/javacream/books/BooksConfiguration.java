@@ -44,6 +44,7 @@ public class BooksConfiguration {
 			book.setTopic((String) options.get("topic"));
 			return book;
 		});
+		
 		return generators;
 	}
 
