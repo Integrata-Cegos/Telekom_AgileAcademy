@@ -6,9 +6,9 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.javacream.store.api.StoreService;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class JpaStoreService implements StoreService{
 
 	@PersistenceContext private EntityManager entityManager;

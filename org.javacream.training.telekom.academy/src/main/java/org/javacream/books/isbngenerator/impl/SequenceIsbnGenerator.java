@@ -1,19 +1,13 @@
 package org.javacream.books.isbngenerator.impl;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-
 import org.javacream.books.isbngenerator.api.IsbnGenerator;
 import org.javacream.util.SequenceGenerator;
 import org.javacream.util.audit.api.AuditService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class SequenceIsbnGenerator implements IsbnGenerator{
 	@Autowired private AuditService auditService;
 	@Autowired private SequenceGenerator sequenceGenerator;
