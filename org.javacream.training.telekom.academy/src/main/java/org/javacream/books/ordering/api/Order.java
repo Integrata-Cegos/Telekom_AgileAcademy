@@ -1,6 +1,11 @@
 package org.javacream.books.ordering.api;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity(name = "OrderEntity")
 public class Order {
+	@Id
 	private long orderId;
 	private String isbn;
 	public void setStatus(OrderStatus status) {
@@ -85,6 +90,7 @@ public class Order {
 	private double totalPrice;
 	private OrderStatus status;
 
+	private Order() {}
 	
 	public static enum OrderStatus{
 		OK, PENDING, UNAVAILABLE;

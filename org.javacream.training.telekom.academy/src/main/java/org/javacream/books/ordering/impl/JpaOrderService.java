@@ -12,8 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SimpleOrderService implements OrderService {
+public class JpaOrderService implements OrderService {
 
+	@Autowired private OrderRepository orderRepository;
 	@Autowired
 	private BooksService booksService;
 	@Autowired
@@ -46,7 +47,13 @@ public class SimpleOrderService implements OrderService {
 			orderStatus = OrderStatus.UNAVAILABLE;
 		}
 		
-		return new Order(sequenceGenerator.nextKey(), isbn, totalPrice, orderStatus);
+		Order order =  new Order(sequenceGenerator.nextKey(), isbn, totalPrice, orderStatus);
+		orderRepository.save(order);
+		return order;
+	}
+	@Override
+	public Order findById(Long id) {
+		return orderRepository.findById(id).get();
 	}
 
 }

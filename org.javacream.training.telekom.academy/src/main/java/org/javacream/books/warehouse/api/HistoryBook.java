@@ -1,5 +1,8 @@
 package org.javacream.books.warehouse.api;
 
+import javax.persistence.Entity;
+
+@Entity
 public class HistoryBook extends Book {
 
 	private int century;
