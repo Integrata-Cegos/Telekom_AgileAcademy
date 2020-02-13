@@ -110,6 +110,7 @@ public class BooksServiceOperationsTest {
 		String isbn = booksService.newBook("TEST", price, options);
 		Book book = booksService.findBookByIsbn(isbn);
 		Assert.assertTrue(book.getClass() == SpecialistBook.class);
+		System.out.println("######################### " + book.isAvailable());
 
 	}
 

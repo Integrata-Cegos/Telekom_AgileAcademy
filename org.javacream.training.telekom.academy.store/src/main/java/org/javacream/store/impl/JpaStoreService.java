@@ -22,7 +22,7 @@ public class JpaStoreService implements StoreService{
 			return result;
 		}
 		catch(Exception e) {
-			return 0;
+			return 1;
 		}
 	}
 	

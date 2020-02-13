@@ -26,6 +26,7 @@ public class DatabaseAuditImpl implements AuditService{
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> logAll() {
 		return entityManager.createNativeQuery("select message from AUDIT").getResultList();
