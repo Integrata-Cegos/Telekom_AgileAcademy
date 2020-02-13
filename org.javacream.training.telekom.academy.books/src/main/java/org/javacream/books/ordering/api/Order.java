@@ -2,8 +2,13 @@ package org.javacream.books.ordering.api;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity(name = "OrderEntity")
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Order {
 	@Id
 	private long orderId;
