@@ -21,7 +21,8 @@ public class WebConfiguration {
 				.paths(PathSelectors.any()).build();
 	}
 	
-	@Bean @Qualifier("store")public RestTemplate restTemplate(RestTemplateBuilder rtb) {
+	@Bean @Qualifier("store")
+	public RestTemplate restTemplate(RestTemplateBuilder rtb) {
 		return rtb.build();
 	}
 
