@@ -10,7 +10,7 @@ public class ReadingStoreService {
 
 	@Autowired  @Qualifier("store") private RestTemplate restTemplate;
 	public int getStock(String category, String id) {
-		return restTemplate.getForObject("http://localhost:9099/store/" + category + "/" + id, Integer.class);
+		return Integer.parseInt(restTemplate.getForObject("http://localhost:9099/api/store/" + category + "/" + id, String.class));
 		
 	}
 }
