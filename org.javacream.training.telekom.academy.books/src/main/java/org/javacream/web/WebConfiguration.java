@@ -25,8 +25,4 @@ public class WebConfiguration {
 		return rtb.build();
 	}
 
-	@Bean @Qualifier("other")public RestTemplate restTemplate2(RestTemplateBuilder rtb) {
-		return rtb.basicAuthentication("Hugo", "#?!$").build();
-	}
-
 }
