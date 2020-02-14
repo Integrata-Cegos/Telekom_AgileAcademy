@@ -3,10 +3,10 @@ package org.javacream.books.ordering.impl;
 import org.javacream.books.ordering.api.Order;
 import org.javacream.books.ordering.api.Order.OrderStatus;
 import org.javacream.books.ordering.api.OrderService;
+import org.javacream.books.store.api.ReadingStoreService;
 import org.javacream.books.warehouse.api.Book;
 import org.javacream.books.warehouse.api.BookException;
 import org.javacream.books.warehouse.api.BooksService;
-import org.javacream.store.api.StoreService;
 import org.javacream.util.SequenceGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -18,7 +18,7 @@ public class JpaOrderService implements OrderService {
 	@Autowired
 	private BooksService booksService;
 	@Autowired
-	private StoreService storeService;
+	private ReadingStoreService storeService;
 	@Autowired private SequenceGenerator sequenceGenerator;
 	@Override
 

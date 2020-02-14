@@ -8,10 +8,10 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import org.javacream.books.isbngenerator.api.IsbnGenerator;
+import org.javacream.books.store.api.ReadingStoreService;
 import org.javacream.books.warehouse.api.Book;
 import org.javacream.books.warehouse.api.BookException;
 import org.javacream.books.warehouse.api.BooksService;
-import org.javacream.store.api.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
@@ -20,7 +20,7 @@ import org.springframework.stereotype.Repository;
 public class JpaBooksService implements BooksService {
 
 	@Autowired
-	private StoreService storeService;
+	private ReadingStoreService storeService;
 	@Autowired
 	private IsbnGenerator isbnGenerator;
 

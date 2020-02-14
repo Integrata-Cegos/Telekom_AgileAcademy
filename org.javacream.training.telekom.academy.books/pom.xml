@@ -11,11 +11,8 @@
 		<relativePath />
 	</parent>
 	<dependencies>
-		<dependency>
-			<groupId>org.javacream.training</groupId>
-			<artifactId>org.javacream.training.telekom.academy.store</artifactId>
-			<version>1.0</version>
-		</dependency>
+		<!-- <dependency> <groupId>org.javacream.training</groupId> <artifactId>org.javacream.training.telekom.academy.store</artifactId> 
+			<version>1.0</version> </dependency> -->
 		<dependency>
 			<groupId>org.javacream.training</groupId>
 			<artifactId>org.javacream.training.telekom.academy.util</artifactId>

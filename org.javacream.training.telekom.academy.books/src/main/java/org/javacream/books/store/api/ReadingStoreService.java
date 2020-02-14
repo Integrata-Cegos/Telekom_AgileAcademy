@@ -1,0 +1,16 @@
+package org.javacream.books.store.api;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
+
+@Component
+public class ReadingStoreService {
+
+	@Autowired  @Qualifier("store") private RestTemplate restTemplate;
+	public int getStock(String category, String id) {
+		return restTemplate.getForObject("http://localhost:9099/store/" + category + "/" + id, Integer.class);
+		
+	}
+}
