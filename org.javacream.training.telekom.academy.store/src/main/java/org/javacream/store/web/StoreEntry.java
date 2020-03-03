@@ -1,4 +1,6 @@
-package org.javacream.store.impl;
+package org.javacream.store.web;
+
+import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -79,3 +81,20 @@ public class StoreEntry {
 		return "StoreEntry [category=" + category + ", id=" + itemId + ", stock=" + stock + "]";
 	}
 }
+
+class StoreId implements Serializable{
+	private static final long serialVersionUID = 1L;
+
+	public String category;
+	public String itemId;
+	public StoreId(String category, String itemId) {
+		super();
+		this.category = category;
+		this.itemId = itemId;
+	}
+	public StoreId() {
+		super();
+	}
+	
+}
+
