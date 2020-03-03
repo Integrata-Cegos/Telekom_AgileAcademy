@@ -1,11 +1,20 @@
 package org.javacream.content;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.javacream.content.api.Content;
 import org.javacream.content.api.ContentService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -58,11 +67,20 @@ public class ContentServiceTest {
 		contentService.findById(null);
 
 	}
-//	@Test public void testInsertValidStoreEntry() {
-//		storeService.setStock(CATEGORY, NEW_ID, STORE);
-//	}
-//	@Test public void testReadValidStoreEntry() {
-//		int actualStock = storeService.getStock(CATEGORY, ID);
-//		Assert.assertEquals(STORE, actualStock);
-//	}
+
+
+}
+@Configuration
+class ContentServiceTestConfiguration {
+
+	@Bean @Qualifier("contentStore") Map<String, Content> contentStore(){
+		HashMap<String, Content> testData = new HashMap<>();
+		List<String> tags1 = new ArrayList<String>();
+		tags1.add("IT");
+		tags1.add("Java");
+		tags1.add("Spring");
+		Content content = new Content("SpringinAction", tags1, "A very good book".getBytes());
+		testData.put(content.getId(), content);
+		return testData;
+	}
 }
