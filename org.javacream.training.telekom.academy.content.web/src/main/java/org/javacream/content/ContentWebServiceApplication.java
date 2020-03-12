@@ -38,7 +38,7 @@ public class ContentWebServiceApplication {
 		tags1.add("IT");
 		tags1.add("Java");
 		tags1.add("Spring");
-		Content content = new Content("SpringinAction", tags1, "A very good book".getBytes());
+		Content content = new Content("SpringinAction", tags1, "A very good book");
 		testData.put(content.getId(), content);
 		return testData;
 	}

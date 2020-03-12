@@ -4,12 +4,15 @@ services:
      image: oscarfonts/h2:latest
      environment:
          - H2_OPTIONS=-ifNotExists
+     ports:
+         - "9081:81"
    storeWebService:
      depends_on:
        - db
      image: javacream/store:1.1-SNAPSHOT
      ports:
        - "9091:9091"
+       - "9077:7777"
      environment:
        - JAVA_MAX_MEMORY=256M
        - JAVA_INITIAL_MEMORY=256M
