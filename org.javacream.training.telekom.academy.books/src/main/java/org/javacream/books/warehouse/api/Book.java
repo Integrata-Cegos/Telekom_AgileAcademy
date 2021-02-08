@@ -1,21 +1,10 @@
-<<<<<<< HEAD
 package org.javacream.books.warehouse.api;
-=======
-package org.javacream.books.warehouse;
->>>>>>> 0f074fe... Musterlösung nach Block 11 der Telekom Academy
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Transient;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 894844d... Musterlösung nach Block 8 der Telekom Academy
-=======
->>>>>>> 0f074fe... Musterlösung nach Block 11 der Telekom Academy
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -24,17 +13,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Inheritance(strategy = InheritanceType.JOINED)
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-@Entity
-@Inheritance(strategy = InheritanceType.JOINED)
->>>>>>> 1a5a5a4... Musterlösung nach Block 6 und 7
-=======
->>>>>>> 894844d... Musterlösung nach Block 8 der Telekom Academy
-=======
->>>>>>> 0f074fe... Musterlösung nach Block 11 der Telekom Academy
 public class Book implements Comparable<Book> {
 	@Id
 	private String isbn;
