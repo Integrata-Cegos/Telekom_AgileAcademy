@@ -12,7 +12,7 @@
 ## Hinweise
 
 * Ein fertig konfigurierter Couchbase-Server inklusive des im Beispiel angegebenen Testdatensatzes liegt auf Docker-Hub
-  * docker pull javacream/couchbase:telekom
-  * docker run -d --name telekomcouchbase -p 8091-8094:8091-8094 -p 11210:11210 javacream/couchbase:telekom 
+  * docker pull javacream/couchbase:content
+  * docker run -d --name telekomcouchbase -p 8091-8094:8091-8094 -p 11210:11210 javacream/couchbase:content
 
 
